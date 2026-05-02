@@ -10,9 +10,7 @@ from torch_geometric.nn import GCNConv
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# ---------------------------------------------------
-# Load graphs and features
-# ---------------------------------------------------
+
 with open("/Users/viswa/Desktop/PythonProject/Sna/data/daily_graphs.pkl", "rb") as f:
     daily_graphs = pickle.load(f)
 
@@ -137,8 +135,6 @@ torch.save(seq_out.cpu(), "/Users/viswa/Desktop/PythonProject/Sna/data/temporal_
 
 print("Embeddings saved!")
 
-# ---------------------------------------------------
-# Example: embedding of first node
-# ---------------------------------------------------
+#print example
 print(final_emb.shape)   # [num_nodes, hidden_dim]
 print(final_emb[0])
